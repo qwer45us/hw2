@@ -87,7 +87,7 @@ warner_bros = Studio.find_by({ "name" => "Warner Bros." })
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
-new_movie["year_released"] = "2005"
+new_movie["year_release"] = "2005"
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"] = warner_bros["id"]
 new_movie.save
@@ -96,7 +96,7 @@ batman_begins = Movie.find_by({ "title" => "Batman Begins" })
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight"
-new_movie["year_released"] = "2008"
+new_movie["year_release"] = "2008"
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"] = warner_bros["id"]
 new_movie.save
@@ -105,7 +105,7 @@ dark_knight = Movie.find_by({ "title" => "The Dark Knight" })
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight Rises"
-new_movie["year_released"] = "2012"
+new_movie["year_release"] = "2012"
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"] = warner_bros["id"]
 new_movie.save
@@ -283,11 +283,11 @@ puts ""
 all_movies = Movie.all
 for movie in all_movies
     title = movie["title"]
-    year_released = movie["year_released"]
-    rated = movie["rated"]
+    year_released = movie["year_release"]
+    rating = movie["rated"]
     studio = Studio.find_by({ "id" => movie["studio_id"] })
     studio_name = studio["name"]
-    puts "#{title} #{year_released} #{rated} #{studio_name}"
+    puts "#{title} #{year_released} #{rating} #{studio_name}"
   end
 
 # Prints a header for the cast output
